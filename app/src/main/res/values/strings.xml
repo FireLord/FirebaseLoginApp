@@ -2,4 +2,7 @@
     <string name="app_name">Login</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_account_sign_up_now">No Account? <font color="#FF3700B3">Sign up now</font></string>
+    <string name="sign_up_terms">By Signing up, you\'re agree to our <font color="#FF3700B3">Terms &amp; Conditions</font> \nand <font color="#FF3700B3">Privacy Policy</font></string>
+    <string name="joined_us_before_login">Joined us before? <font color="#FF3700B3">Login</font></string>
 </resources>

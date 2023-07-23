@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "501855327372",
+    "project_id": "login-bf895",
+    "storage_bucket": "login-bf895.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501855327372:android:55dece3694117154e257a9",
+        "android_client_info": {
+          "package_name": "com.firelord.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501855327372-0cu2k6c4l94ovbpt6abe1l8tos6bfk5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIidX50D0XfWYvr3yafKqbnX5B6ygOBlE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501855327372-0cu2k6c4l94ovbpt6abe1l8tos6bfk5q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

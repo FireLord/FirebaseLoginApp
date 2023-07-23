@@ -87,6 +87,9 @@ class LoginFragment : Fragment() {
         loginBinding.btPhone.setOnClickListener {
             openBottomSheet()
         }
+        loginBinding.tvForgotPass.setOnClickListener {
+            openResetBottomSheet()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -193,6 +196,10 @@ class LoginFragment : Fragment() {
 
     private fun openBottomSheet() {
         val bottomSheetFragment = OtpBottomSheetFragment(findNavController())
+        bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
+    }
+    private fun openResetBottomSheet() {
+        val bottomSheetFragment = ForgotPasswordSheetFragment()
         bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
     }
 }

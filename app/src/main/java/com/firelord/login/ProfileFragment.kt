@@ -40,8 +40,14 @@ class ProfileFragment : Fragment() {
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser!=null){
             val email = firebaseUser.email
+            val phone = firebaseUser.phoneNumber
             // Set to textView
-            profileBinding.tvEmail.text = email
+            if (email.isNullOrEmpty()){
+                profileBinding.textView6.text = "Phone: "
+                profileBinding.tvEmail.text = phone
+            }else{
+                profileBinding.tvEmail.text = email
+            }
         } else {
             profileBinding.root.findNavController().navigate(R.id.action_profileFragment_to_loginFragment)
         }

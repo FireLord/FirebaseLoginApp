@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.firelord.login.databinding.FragmentLoginBinding
 import com.firelord.login.util.Constants.Companion.RC_SIGN_IN
 import com.firelord.login.util.Constants.Companion.TAG
@@ -81,6 +82,10 @@ class LoginFragment : Fragment() {
         loginBinding.btLogin.setOnClickListener{
             //before logging in, validate data
             validateData()
+        }
+        // handle otp login click
+        loginBinding.btPhone.setOnClickListener {
+            openBottomSheet()
         }
     }
 
@@ -184,5 +189,10 @@ class LoginFragment : Fragment() {
         if (firebaseUser!=null){
            loginBinding.root.findNavController().navigate(R.id.action_loginFragment_to_profileFragment)
         }
+    }
+
+    private fun openBottomSheet() {
+        val bottomSheetFragment = OtpBottomSheetFragment(findNavController())
+        bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
     }
 }

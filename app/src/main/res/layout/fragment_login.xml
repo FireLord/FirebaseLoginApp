@@ -69,14 +69,14 @@
 
     <TextView
         android:id="@+id/tvNoAccount"
-        app:layout_constraintEnd_toEndOf="@+id/btGoogle"
-        app:layout_constraintStart_toStartOf="@+id/btGoogle"
-        app:layout_constraintTop_toBottomOf="@+id/btGoogle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/no_account_sign_up_now"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/btPhone"
+        app:layout_constraintStart_toStartOf="@+id/btPhone"
+        app:layout_constraintTop_toBottomOf="@+id/btPhone" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -104,5 +104,16 @@
         android:textColor="@color/black"
         android:textSize="34sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btPhone"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Login with phone"
+        app:icon="@drawable/baseline_sms_24"
+        app:layout_constraintEnd_toEndOf="@+id/btGoogle"
+        app:layout_constraintStart_toStartOf="@+id/btGoogle"
+        app:layout_constraintTop_toBottomOf="@+id/btGoogle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

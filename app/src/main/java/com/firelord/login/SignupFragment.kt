@@ -48,6 +48,9 @@ class SignupFragment : Fragment() {
             //validate data
             validateData()
         }
+        signupBinding.tvBefore.setOnClickListener {
+            it.findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
+        }
     }
     private fun validateData() {
         // get data

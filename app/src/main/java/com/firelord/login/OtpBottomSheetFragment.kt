@@ -55,7 +55,6 @@ class OtpBottomSheetFragment(private val navController: NavController): BottomSh
                         .setCallbacks(callbacks) // OnVerificationStateChangedCallbacks
                         .build()
                     PhoneAuthProvider.verifyPhoneNumber(options)
-
                 }else{
                     Toast.makeText(requireContext() , "Please Enter correct Number" , Toast.LENGTH_SHORT).show()
                 }
@@ -77,9 +76,16 @@ class OtpBottomSheetFragment(private val navController: NavController): BottomSh
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
                         // The verification code entered was invalid
                     }
-                    // Update UI
+                    otpBottomSheetBinding.phoneProgressBar.visibility = View.INVISIBLE
+                    Toast.makeText(requireContext(), "Login failed due to ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    dismiss()
                 }
                 otpBottomSheetBinding.phoneProgressBar.visibility = View.INVISIBLE
+            }
+            .addOnFailureListener {e->
+                otpBottomSheetBinding.phoneProgressBar.visibility = View.INVISIBLE
+                Toast.makeText(requireContext(), "Login failed due to ${e.message}", Toast.LENGTH_SHORT).show()
+                dismiss()
             }
     }
 
@@ -107,8 +113,10 @@ class OtpBottomSheetFragment(private val navController: NavController): BottomSh
                 Toast.makeText(requireContext(),e.message.toString(),Toast.LENGTH_SHORT).show()
                 Log.d("TAG", "onVerificationFailed: ${e.toString()}")
             }
-            otpBottomSheetBinding.phoneProgressBar.visibility = View.VISIBLE
             // Show a message and update the UI
+            Toast.makeText(requireContext(),e.message.toString(),Toast.LENGTH_SHORT).show()
+            otpBottomSheetBinding.phoneProgressBar.visibility = View.INVISIBLE
+            dismiss()
         }
 
         override fun onCodeSent(
